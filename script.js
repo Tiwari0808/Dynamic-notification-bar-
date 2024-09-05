@@ -21,7 +21,7 @@ function showNotification(msg) {
         popUp.classList.add('invalid');
     }
 
-    setTimeout(()=>{
+    setTimeout(() => {
         popUp.remove();
-    },3500);
+    }, 3500);
 }

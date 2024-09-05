@@ -44,8 +44,16 @@ button{
     width: 13rem;
     text-align: center;
     font-weight: 500;
-    /* box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2); */
     border: 0;
+    position: relative;
+    transform: translateX(100%);
+    animation: anim2 0.1s linear forwards;
+}
+
+@keyframes anim2 {
+    100%{
+        transform: translateX(0);
+    }
 }
 
 .pop i{
@@ -58,4 +66,28 @@ button{
 
 .pop.invalid i{
     color: orange;
+}
+
+.pop::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background: green;
+    animation: anim 3.5s ease-in-out forwards;
+}
+@keyframes anim {
+    100%{
+        width: 0;
+    }
+}
+
+.pop.error::after{
+    background-color: red;
+}
+
+.pop.invalid::after{
+    background-color: orange;
 }
